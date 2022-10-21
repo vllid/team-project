@@ -1,0 +1,72 @@
+@startuml "erd"
+
+entity "Навыки" as skills
+{
+    ID_Навык : int <<PK>>
+    Название : nvarchar(20)
+}
+
+entity "Специализации" as spec_enum
+{
+    ID_Специализация : int <<PK>>
+    Название : nvarchar(30)
+}
+
+entity "Платформы" as platf 
+{
+    ID_Платформа : int <<PK>>
+    Название : nvarchar(30)
+}
+
+entity "Статусы" as statuses
+{
+    ID_Статус : int <<PK>>
+    Название : nvarchar(20)
+}
+
+entity "Заказчики" as cust 
+{
+    ID_Заказчик : int <<PK>>
+    email : nvarchar(30)
+    Пароль : nvarchar(30)
+    Имя : nvarchar(20)
+    Фамилия : nvarchar(20)
+    Отчество : nvarchar(20)
+    Дата рождения : datetime 
+    О себе : nvarchar(250)
+}
+
+entity "Специалист" as spec 
+{
+    ID_Специалист : int <<PK>>
+    email : nvarchar(30)
+    Пароль : nvarchar(30)
+    Имя : nvarchar(20)
+    Фамилия : nvarchar(20)
+    Отчество : nvarchar(20)
+    Дата рождения : datetime 
+    О себе : nvarchar(250)
+    ID_Навык : int <<FK>>
+    ID_Специализация : int <<FK>>
+    Портфорлио : nvarchar(400)
+}
+
+enum "Заявка" as request 
+{
+    ID_Заявка : int <<PK>>
+    ID_Заказчик : int <<FK>>
+    ID_Специалист : int <<FK>>
+    Время связи : datatime 
+    ID_Статус : int <<FK>>
+    ID_Платформа : int <<FK>>
+}
+
+cust ||--o{ request
+spec ||--o{ request 
+statuses ||--o{ request
+platf ||--o{ request
+spec_enum ||--o{ spec 
+skills }o--o{ spec 
+
+
+@enduml
