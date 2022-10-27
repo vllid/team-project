@@ -6,10 +6,25 @@ entity "Навыки" as skills
     Название : nvarchar(20)
 }
 
+entity "Каталог навыков специалиста" as skills_cat
+{
+    ID_Кат_нав : int <<PK>>
+    ID_Навык : int <<FK>>
+    ID_Специалист : int <<FK>>
+}
+
 entity "Специализации" as spec_enum
 {
     ID_Специализация : int <<PK>>
     Название : nvarchar(30)
+}
+
+entity "Отзывы" as appl
+{
+    ID_Отзыв : int <<PK>>
+    ID_Пользователя nvarchar(50) <<FK>>
+    Оценка : float 
+    Комментарий : nvarchar(250)
 }
 
 entity "Платформы" as platf 
@@ -18,15 +33,35 @@ entity "Платформы" as platf
     Название : nvarchar(30)
 }
 
-entity "Статусы" as statuses
+entity "Страны" as countries 
 {
-    ID_Статус : int <<PK>>
+    ID_Страна : int <<PK>>
+    Название : nvarchar(50)
+}
+
+entity "Города" as cities 
+{
+    ID_Город : int <<PK>>
+    Название : nvarchar(50)
+}
+
+entity "Статусы заявки" as app_statuses
+{
+    ID_Статус_заявки : int <<PK>>
+    Название : nvarchar(20)
+}
+
+entity "Статусы консультации" as cons_statuses
+{
+    ID_Статус_консультации : int <<PK>>
     Название : nvarchar(20)
 }
 
 entity "Заказчики" as cust 
 {
-    ID_Заказчик : int <<PK>>
+    ID_Заказчик : nvarchar(50) <<PK>>
+    ID_Страна : int <<FK>>
+    ID_Город : int <<FK>>
     email : nvarchar(30)
     Пароль : nvarchar(30)
     Имя : nvarchar(20)
@@ -38,7 +73,9 @@ entity "Заказчики" as cust
 
 entity "Специалист" as spec 
 {
-    ID_Специалист : int <<PK>>
+    ID_Специалист : nvarchar(50) <<PK>>
+    ID_Страна : int <<FK>>
+    ID_Город : int <<FK>>
     email : nvarchar(30)
     Пароль : nvarchar(30)
     Имя : nvarchar(20)
@@ -46,7 +83,6 @@ entity "Специалист" as spec
     Отчество : nvarchar(20)
     Дата рождения : datetime 
     О себе : nvarchar(250)
-    ID_Навык : int <<FK>>
     ID_Специализация : int <<FK>>
     Портфорлио : nvarchar(400)
 }
@@ -57,16 +93,33 @@ enum "Заявка" as request
     ID_Заказчик : int <<FK>>
     ID_Специалист : int <<FK>>
     Время связи : datatime 
-    ID_Статус : int <<FK>>
+    ID_Статус_заявки : int <<FK>>
     ID_Платформа : int <<FK>>
 }
 
-cust ||--o{ request
-spec ||--o{ request 
-statuses ||--o{ request
+enum "Консультация" as cons 
+{
+    ID_Консультация: int <<PK>>
+    ID_Заявка : int <<FK>>
+    ID_Статус_консультации : int <<FK>>
+}
+
+cust ||--o{ request : могут отправлять 
+spec ||--o{ request : могут принимать/отклонять
+app_statuses ||--o{ request
 platf ||--o{ request
-spec_enum ||--o{ spec 
-skills }o--o{ spec 
+spec ||--o{  spec_enum : имеет
+skills_cat }o--|| spec : имеет
+skills_cat }o--|| skills
+request ||--o| cons : может создать
+cons }o--|| cons_statuses
+cust }o--|| countries
+cust }o--|| cities
+spec }o--|| countries
+spec }o--|| cities
+
+cust }o--|| appl 
+spec }o--|| appl
 
 
 @enduml
