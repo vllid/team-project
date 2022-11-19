@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Профиль заказчика</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Подключение CSS файла bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  <!-- Далее может идти подключение любого другого CSS файла сайта -->
+  <link href="styles.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="row ">
+    <!--В строку -->
+    <div class="col-md-2"></div>
+    <div class="col">
+      <!--Начиная с 3его столбца -->
+      <nav class="nav navAdd">
+        <!--nav-класс бутстрапа; navAdd-реализованный класс -->
+        <div class="container">
+          <a class="navbar-brand navHeadAdd" href="ns.html">Город</a> <!-- Название -->
+          <ul class="nav justify-content-end">
+            <!-- Ссылки -->
+            <li> <a class="nav-link active dl" href="каталог посиск.html">каталог специалистов</a> </li>
+            <li> <a class="nav-link dl" href="#AboutPlatform">О платформе</a> </li>
+            <!--Контекстная ссылка  -->
+            <li> <a class="nav-link dl" href="#Kontakts">Контакты</a> </li><!-- Контекстная ссылка -->
+            <li><a class="nav-link dl" href="профиль заказчика.html">Профиль</a> </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+  <p class="text-center searchProfi "> <br><br>Каталог объявлений специаллистов<br><br><br></p>
+  <form action="http://google.com/search" target="_blank" style="padding-left: 200px;">
+    <input class="inputSearch" type="search" name="text" required placeholder="Поиск по сайту">
+    <input class="inputBTN" type="submit" value="Найти">
+  </form>
+  <p style=" text-decoration-line: underline; padding-left: 1200px;  color: #323232;"> <br>Фильтр</p>
+</body>
+
+</html>
