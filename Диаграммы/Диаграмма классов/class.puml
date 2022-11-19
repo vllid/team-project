@@ -1,0 +1,20 @@
+@startuml class 
+
+enum Roles
+{
+    
+}
+
+abstract class user  
+{
+    string country;
+    string city;
+    string name;
+    string surname;
+    string patronymic;
+    Date birthdate;
+    string about;
+    ID_Роль : int <<FK>>
+}
+
+@enduml
