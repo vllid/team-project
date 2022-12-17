@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">  
+    <title>Test</title>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <a class="link logo" href="/">City</a>
+            <nav class="nav">
+                <li class="nav-item"><a class="link nav-item-link" href="/#about">О платформе</a></li>
+                <li class="nav-item"><a class="link nav-item-link" href="/#contacts">Контакты</a></li>
+                <li class="nav-item"><a class="link nav-item-link" href="/">Войти</a></li>
+                <li class="nav-item"><a class="link nav-item-link active" href="/">Зарегистрироваться</a></li>
+                <li class="nav-item dropdown">
+                    <a class="link nav-item-link dropbtn" href="#">vvladimirlll@mail.ru</a>
+                    <div class="dropdown-content">
+                        <a class="link nav-item-link" href="#">Личный кабинет</a>
+                        <a class="link nav-item-link" href="#">Оповещения</a>
+                        <a class="link nav-item-link" href="#">Выйти</a>
+                    </div>
+                </li>
+            </nav>
+        </header>
+        <main class="main">
+            <section class="main__form">
+                <div class="section-title title-container main__form__title">
+                    <h1 class="title__text main__form__title__text">Вход</h1>
+                </div>
+                <div class="main__form__content">
+                    <form action="/" method="POST" class="main__signup-form__content__form">
+                        <div class="main__form__content__form__item">
+                            <label class="label label-input" for="email">Электронная почта</label>
+                            <input placeholder="Введите email" type="email" class="form-input main__form__content__form__email" id="email">
+                        </div>
+                        <div class="main__form__content__form__item">
+                            <label class="label label-input" for="password">Пароль</label>
+                            <input placeholder="Введите пароль" type="password" class="form-input main__form__content__form__password" id="password">
+                        </div>
+                        <div class="main__form__content__form__remember">
+                            <input class="checkbox main__form__content__form__item__checkbox" type="checkbox" name="remember" id="remember">
+                            <label class="label label-checkbox" for="specialist">Оставаться в системе</label>
+                        </div>
+                        <div class="main__form__content__form__item">
+                            <input type="submit" class="main__form__content__form__submit" value="Зарегистрироваться">
+                        </div>
+                        <div class="main__form__content__form__item">
+                            <p class="main__form__content__form__item__text">
+                                Уже есть аккаунт? <a class="link main__form__content__form__item__text__to-login" href="/">Войти</a>
+                            </p>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            (C) City 2022
+        </footer>
+    </div>
+</body>
+</html>

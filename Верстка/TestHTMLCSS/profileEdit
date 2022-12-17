@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <title>vvladimirlll@mail.ru</title>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <a class="link logo" href="/">City</a>
+            <nav class="nav">
+                <li class="nav-item"><a class="link nav-item-link" href="/#about">О платформе</a></li>
+                <li class="nav-item"><a class="link nav-item-link" href="/#contacts">Контакты</a></li>
+                <li class="nav-item dropdown">
+                    <a class="link nav-item-link dropbtn" href="#">vvladimirlll@mail.ru</a>
+                    <div class="dropdown-content">
+                        <a class="link nav-item-link" href="#">Личный кабинет</a>
+                        <a class="link nav-item-link" href="#">Оповещения</a>
+                        <a class="link nav-item-link" href="#">Выйти</a>
+                    </div>
+                </li>
+            </nav>
+        </header>
+        <main class="main">
+            <div class="profile__wrapper">
+                <section class="menu">
+                    <li class="menu__item menu__item-active"><a class="link menu__item-link" href="/#about">Профиль</a></li>
+                    <li class="menu__item"><a class="link menu__item-link" href="/#about">Профиль</a></li>
+                    <li class="menu__item"><a class="link menu__item-link" href="/#about">Профиль</a></li>
+                </section>
+                <section class="profile__data">
+                    <div class="profile__data__general">
+                        <h2 class="profile__data__general__item">Фото</h2>
+                        <img src="/" alt="User avatar" class="profile__data__general__item profile__data__general__avatar">
+
+                    </div>
+                    <div class="main__form__content">
+                        <form enctype="multipart/form-data" action="/" method="POST" class="main__signup-form__content__form">
+                            @csrf
+                            <div class="main__form__content__form__item">
+                                <label class="label label-input" for="userfile">Изменить фото</label>
+                                <input name="userfile" type="file" class="form-input main__form__content__form__email" id="userfile">
+                            </div>
+                            <div class="main__form__content__form__item">
+                                <label class="label label-input" for="name">Имя</label>
+                                <input name="name" value="vvladimirlll@mail.ru" type="text" class="form-input main__form__content__form__name" id="name">
+                            </div>
+                            <div class="main__form__content__form__item">
+                                <label class="label label-input" for="surname">Фамилия</label>
+                                <input name="surname" value="surname" type="text" class="form-input main__form__content__form__surname" id="surname">
+                            </div>
+                            <div class="main__form__content__form__item">
+                                <label class="label label-input" for="patronymic">Отчество</label>
+                                <input name="patronymic" value="patronymic" type="text" class="form-input main__form__content__form__patronymic" id="patronymic">
+                            </div>
+                            <div class="main__form__content__form__item">
+                                <label class="label label-input" for="bday">Дата рождения</label>
+                                <input name="bday" type="date" class="form-input main__form__content__form__bday" id="bday">
+                            </div>
+                            <div class="main__form__content__form__item">
+                                <label class="label label-input" for="country">Страна</label>
+                                <select name="country[]" id="country" class="form-input">
+                                    <option value="0" disabled>Выберите страну</option>
+                                    <option selected value="Russia">Russia</option>
+                                    <option value="Germany">Germany</option>
+                                    <option value="Canada">Canada</option>
+                                    <option value="Australia">Australia</option>
+                                </select>
+                            </div>
+                            <div class="main__form__content__form__item">
+                                <label class="label label-input" for="country">Город</label>
+                                <select name="city[]" id="city" class="form-input">
+                                    <option value="0" disabled>Выберите город</option>
+                                    <option selected value="Moscow">Moscow</option>
+                                    <option value="Astrakhan">Astrakhan</option>
+                                </select>
+                            </div>
+                            <div class="main__form__content__form__item">
+                                <label class="label label-input" for="about">О себе</label>
+                                <textarea required maxlength="400" name="about" id="about" cols="30" rows="10" class="form-input">
+
+                                </textarea>
+                            </div>
+                            <div class="main__form__content__form__item">
+                                <label class="label label-input" for="skill">Навыки</label>
+                                <select multiple="multiple" name="skill[]" id="skill" class="form-input">
+                                    <option value="0" disabled>Выберите навык</option>
+                                    <option selected value="1">Sony Vegas Pro</option>
+                                    <option value="2">Adobe Premier Pro</option>
+                                    <option value="3">DaVinci Resolve</option>
+                                </select>
+                            </div>
+                            <div class="main__form__content__form__item">
+                                <label class="label label-input" for="spec">Специализации</label>
+                                <select multiple="multiple" name="spec[]" id="spec" class="form-input">
+                                    <option value="0" disabled>Выберите специализацию</option>
+                                    <option selected value="1">Видео-монтаж</option>
+                                    <option value="2">Фитнес</option>
+                                    <option value="3">Юриспруденция</option>
+                                    <option value="4">Фото</option>
+                                </select>
+                            </div>
+                            <div class="main__form__content__form__item">
+                                <label class="label label-input" for="portfolio">Портфолио</label>
+                                <textarea required maxlength="400" name="portfolio" id="portfolio" cols="30" rows="10" class="form-input">
+
+                                </textarea>
+                            </div>
+
+                            <div class="main__form__content__form__item">
+                                <input type="submit" class="btn profile__edit__submit" value="Сохранить">
+                            </div>
+                        </form>
+                    </div>
+                </section>
+                <section class="profile__action">
+                    
+                </section>
+            </div>
+        </main>
+        <footer class="footer">
+            (C) City 2022
+        </footer>
+    </div>
+</body>
+</html>

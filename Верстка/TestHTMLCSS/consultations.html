@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">  
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/css/bootstrap-select.min.css" integrity="sha512-mR/b5Y7FRsKqrYZou7uysnOdCIJib/7r5QeJMFvLNHNhtye3xJp1TdJVPLtetkukFn227nKpXD9OjUc09lx97Q==" crossorigin="anonymous"
+    referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/js/bootstrap-select.min.js" integrity="sha512-FHZVRMUW9FsXobt+ONiix6Z0tIkxvQfxtCSirkKc5Sb4TKHmqq1dZa8DphF0XqKb3ldLu/wgMa8mT6uXiLlRlw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Test</title>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <a class="link logo" href="/">City</a>
+            <nav class="nav">
+                <li class="nav-item"><a class="link nav-item-link" href="/#about">О платформе</a></li>
+                <li class="nav-item"><a class="link nav-item-link" href="/#contacts">Контакты</a></li>
+                <li class="nav-item"><a class="link nav-item-link" href="/">Войти</a></li>
+                <li class="nav-item"><a class="link nav-item-link active" href="/">Зарегистрироваться</a></li>
+                <li class="nav-item dropdown">
+                    <a class="link nav-item-link dropbtn" href="#">vvladimirlll@mail.ru</a>
+                    <div class="dropdown-content">
+                        <a class="link nav-item-link" href="#">Личный кабинет</a>
+                        <a class="link nav-item-link" href="#">Оповещения</a>
+                        <a class="link nav-item-link" href="#">Выйти</a>
+                    </div>
+                </li>
+            </nav>
+        </header>
+        <main class="main">
+            <div class="profile__wrapper">
+                <section class="menu">
+                    <li class="menu__item menu__item-active"><a class="link menu__item-link" href="/#about">Профиль</a></li>
+                    <li class="menu__item"><a class="link menu__item-link" href="/#about">Профиль</a></li>
+                    <li class="menu__item"><a class="link menu__item-link" href="/#about">Профиль</a></li>
+                </section>
+                
+                <section class="consultations">
+                    <div class="section-title title-container main__form__title">
+                        <h1 class="title__text main__form__title__text">Консультации</h1>
+                    </div>
+                    <div class="content">
+                        <div class="tabs">
+                            <nav class="tabs__items">
+                                <a href="#active" class="tabs__item">Активные</a>
+                                <a href="#ended" class="tabs__item">Завершенные</a>
+                                <a href="#sended" class="tabs__item">Заявки на консультации</a>
+                            </nav>
+                            <div class="tabs__body">
+                                <div id="active" class="tabs__block">
+                                    <div class="consultations__item">
+                                        <div target="_blank" href="index.html" class="link consultations__item__info">
+                                            <a target="_blank" href="index.html" class="link consultations__item__info__customer">Заказчик: Иванов И.И.</a>
+                                            <a target="_blank" href="index.html" class="link consultations__item__info__specialist">Специалист: Сергеев С.С.</a>
+                                            <p class="consultations__item__info__platform">Платформа: ZOOM</p>
+                                            <p class="consultations__item__info__time">Время связи: 12.12.2022 9:00</p>
+                                        </div>
+                                        <div class="consultations__item__actions">
+                                            <a href="index.html" class="my-btn consultations__item__detailed">Подробнее</a>
+                                            <button class="my-btn ">Завершить общение</button>
+                                        </div>
+                                    </div>
+                                    <div class="consultations__item">
+                                        <div target="_blank" href="index.html" class="link consultations__item__info">
+                                            <a target="_blank" href="index.html" class="link consultations__item__info__customer">Заказчик: Иванов И.И.</a>
+                                            <a target="_blank" href="index.html" class="link consultations__item__info__specialist">Специалист: Сергеев С.С.</a>
+                                            <p class="consultations__item__info__platform">Платформа: ZOOM</p>
+                                            <p class="consultations__item__info__time">Время связи: 12.12.2022 10:00</p>
+                                        </div>
+                                        <div class="consultations__item__actions">
+                                            <a href="index.html" class="my-btn consultations__item__detailed">Подробнее</a>
+                                            <button class="my-btn ">Завершить общение</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="ended" class="tabs__block">
+                                    <div class="consultations__item">
+                                        <div target="_blank" href="index.html" class="link consultations__item__info">
+                                            <a target="_blank" href="index.html" class="link consultations__item__info__customer">Заказчик: Иванов И.И.</a>
+                                            <a target="_blank" href="index.html" class="link consultations__item__info__specialist">Специалист: Сергеев С.С.</a>
+                                            <p class="consultations__item__info__platform">Платформа: ZOOM</p>
+                                            <p class="consultations__item__info__time">Время связи: 01.12.2022 9:00</p>
+                                        </div>
+                                        <div class="consultations__item__actions">
+                                            <a href="index.html" class="my-btn consultations__item__detailed">Подробнее</a>
+                                            <button class="my-btn ">Завершить общение</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="sended" class="tabs__block">
+                                    <div class="consultations__item">
+                                        <div target="_blank" href="index.html" class="link consultations__item__info">
+                                            <a about="_blank" href="index.html" class="link consultations__item__info__customer">Заказчик: Иванов И.И.</a>
+                                            <a about="_blank" href="index.html" class="link consultations__item__info__specialist">Специалист: Сергеев С.С.</a>
+                                        </div>
+                                        <div class="consultations__item__actions">
+                                            <a href="platformchoice.html" class="my-btn consultations__item__detailed">Согласиться на консультацию</a>
+                                            <button class="my-btn ">Отменить заявку</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="profile__action">
+                    <a href="/" class="my-btn profile__action__btn">
+                        <span class="profile__action__btn__text">Редактировать профиль</span>
+                    </a>
+                    <a href="/" class="my-btn profile__action__btn">
+                        <span class="profile__action__btn__text">Оставить заявку на связь</span>
+                    </a>
+                    <a href="/" class="my-btn profile__action__btn">
+                        <span class="profile__action__btn__text">Оставить отзыв</span>
+                    </a>
+                </section>
+            </div>
+        </main>
+        <footer class="footer">
+            (C) City 2022
+        </footer>
+    </div>
+</body>
+</html>
