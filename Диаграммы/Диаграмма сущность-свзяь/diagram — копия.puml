@@ -26,13 +26,6 @@ entity "Каталог специализаций специалиста" as spe
     ID_Специалиста : int <<FK>>
 }
 
-
-entity "Платформы" as platf 
-{
-    ID_Платформа : int <<PK>>
-    Название : nvarchar(30)
-}
-
 entity "Страна" as countries 
 {
     ID_Страна : int <<PK>>
@@ -44,12 +37,6 @@ entity "Город" as cities
     ID_Город : int <<PK>>
     ID_Страна : int <<FK>>
     Название : nvarchar(50)
-}
-
-entity "Роль" as role 
-{
-    ID_Роль: int <<PK>>
-    Наименование: nvarchar(40)
 }
 
 entity "Пользователь" as users 
@@ -65,7 +52,7 @@ entity "Пользователь" as users
     * Дата рождения : datetime 
     * О себе : nvarchar(250)
     Портфорлио : nvarchar(400)
-    ID_Роль : int <<FK>>
+    ID_Роль : int
 }
 
 enum "Заявка" as request 
@@ -74,8 +61,8 @@ enum "Заявка" as request
     * ID_Заказчик : int <<FK>>
     * ID_Специалист : int <<FK>>
     Время связи : datatime 
-    * ID_Статус_заявки : int <<FK>>
-    ID_Платформа : int <<FK>>
+    Статус_заявки : int
+    ID_Платформа : int
     Оценка_заказчика : int 
     Комментарий_заказчика : nvarchar(250)
     Оценка_специалиста : int 
@@ -83,7 +70,6 @@ enum "Заявка" as request
 }
 
 users ||--o{ request : может создать
-platf ||--o{ request
 
 skills_cat }o--|| users : имеет
 skills_cat }o--|| skills
@@ -93,8 +79,6 @@ spec_cat }o--|| spec_enum
 
 users }o--|| cities
 countries ||--|{ cities
-
-users }o--o| role
 
 'request ||--|| appl 
 

@@ -1,0 +1,43 @@
+@startuml "usecases"
+
+left to right direction
+
+actor :Не авторизованный пользователь: as notAuthorizedUser
+actor :Авторизованный пользователь: as authorizedUser
+actor :Заказчик: as customer 
+actor :Специалист: as specialist
+/'authorizedUser <|-- customer
+authorizedUser <|-- specialist
+notAuthorizedUser <|-- authorizedUser
+'/
+
+
+usecase (Войти) as login 
+usecase (Зарегистрироваться) as signup 
+usecase (Посмотреть каталог специалистов) as seeCatalog
+
+notAuthorizedUser --> login 
+notAuthorizedUser --> signup
+notAuthorizedUser --> seeCatalog
+
+usecase (Просматривать страницы\nдругих пользователей) as seeUsers
+usecase (Оставить отзыв) as review
+usecase (Завершить консультацию\nпреждевременно) as endConsult
+usecase (Выйти из аккаунта) as logout
+
+authorizedUser --> seeUsers
+authorizedUser --> review
+authorizedUser --> endConsult
+authorizedUser --> logout
+
+usecase (Оставить заявку на общение) as apply
+usecase (Принять заявку) as acceptApply
+usecase (Выбрать время и платформу) as pickDateAndPlatform
+usecase (Отклонить заявку) as denyApply
+
+customer --> apply
+specialist --> acceptApply
+specialist --> denyApply
+acceptApply .> pickDateAndPlatform : включает
+
+@enduml
